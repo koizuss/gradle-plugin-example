@@ -2,7 +2,8 @@
 //     project.hasProperty(name) ? project[name] : defaultValue
 // }
 
-apply plugin: GradleUtilPlugin
+// apply plugin: GradleUtilPlugin
+apply plugin: 'gradle-util'
 
 /**
  * exmaple task
