@@ -1,0 +1,15 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+/**
+ * project info
+ */
+archivesBaseName = 'gradle-util-plugin'
+group = 'koizuss.apps.example.gradle.plugin'
+version = '1.0.0-SNAPSHOT'
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}

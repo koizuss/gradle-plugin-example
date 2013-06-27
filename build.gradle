@@ -1,6 +1,21 @@
+// import koizuss.apps.example.gradle.plugin.GradleUtilPlugin
+
 // def prop = { name, defaultValue ->
 //     project.hasProperty(name) ? project[name] : defaultValue
 // }
+
+/**
+ * External dependencies for the build script
+ * @see http://www.gradle.org/docs/current/userguide/userguide_single.html#sec:external_dependencies
+ */
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'koizuss.apps.example.gradle.plugin:gradle-util-plugin:1.0.0-SNAPSHOT'
+    }
+}
 
 // apply plugin: GradleUtilPlugin
 apply plugin: 'gradle-util'

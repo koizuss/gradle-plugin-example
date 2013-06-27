@@ -1,3 +1,5 @@
+package koizuss.apps.example.gradle.plugin
+
 import org.gradle.api.*
 
 class GradleUtilPlugin implements Plugin<Project> {
