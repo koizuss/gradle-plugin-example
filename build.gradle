@@ -10,17 +10,3 @@ apply plugin: GradleUtilPlugin
 task example << {
     println prop('greet', 'default')
 }
-
-class GradleUtilPlugin implements Plugin<Project> {
-    void apply(Project project) {
-        project.ext.prop = { name, defaultValue ->
-                                project.hasProperty(name) ? project[name] : defaultValue
-                            }
-
-        // project.ext = {
-        //     prop = { name, defaultValue ->
-        //         project.hasProperty(name) ? project[name] : defaultValue
-        //     }
-        // }
-    }
-}
