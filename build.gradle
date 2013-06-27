@@ -1,0 +1,10 @@
+def prop = { name, defaultValue ->
+    project.hasProperty(name) ? project[name] : defaultValue
+}
+
+/**
+ * exmaple task
+ */
+task example << {
+    println prop('greet', 'default')
+}
