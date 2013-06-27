@@ -1,10 +1,26 @@
-def prop = { name, defaultValue ->
-    project.hasProperty(name) ? project[name] : defaultValue
-}
+// def prop = { name, defaultValue ->
+//     project.hasProperty(name) ? project[name] : defaultValue
+// }
+
+apply plugin: GradleUtilPlugin
 
 /**
  * exmaple task
  */
 task example << {
     println prop('greet', 'default')
+}
+
+class GradleUtilPlugin implements Plugin<Project> {
+    void apply(Project project) {
+        project.ext.prop = { name, defaultValue ->
+                                project.hasProperty(name) ? project[name] : defaultValue
+                            }
+
+        // project.ext = {
+        //     prop = { name, defaultValue ->
+        //         project.hasProperty(name) ? project[name] : defaultValue
+        //     }
+        // }
+    }
 }
